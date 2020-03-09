@@ -19,7 +19,7 @@ namespace webrtc {
 namespace jni {
 
 static jlong JNI_LibvpxH264Encoder_CreateEncoder(JNIEnv* jni) {
-  return jlongFromPointer(H264Encoder::Create().release());
+  return jlongFromPointer(H264Encoder::Create(cricket::VideoCodec(cricket::kH264CodecName)).release());
 }
 
 static jboolean JNI_LibvpxH264Encoder_IsSupported(JNIEnv* jni) {
